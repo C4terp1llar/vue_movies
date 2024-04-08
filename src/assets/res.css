@@ -1,0 +1,35 @@
+.p-s-s{
+    padding: 0 15px;
+}
+.p-s-m{
+    padding: 0 30px;
+}
+.p-s-l{
+    padding: 0 45px;
+}
+.p-s{
+    padding: 15px;
+}
+.p-m{
+    padding: 30px;
+}
+.p-l{
+    padding: 45px;
+}
+
+.grid-cards-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-child-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-child-card img {
+    max-width: 100%;
+    height: auto;
+}
