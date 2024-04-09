@@ -1,11 +1,13 @@
-<script setup>
-
-</script>
-
 <template>
-<h1>home</h1>
+  <div class="container">
+    <div class="center">
+      <h4>Добро пожаловать на сайт для поиска фильмов!</h4>
+    </div>
+  </div>
 </template>
 
-<style scoped lang="scss">
+<script setup>
+</script>
 
+<style scoped lang="scss">
 </style>

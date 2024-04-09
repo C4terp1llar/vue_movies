@@ -2,18 +2,21 @@
 import {ref} from "vue";
 import AppMovie from "@/components/AppMovie.vue";
 import AppLoader from "@/components/AppLoader.vue";
+import {useMovieStore} from "@/stores/movieStore";
+
+const store = useMovieStore();
 
 const searchQuery = ref('');
 const moviesByQuery = ref(null);
 const notFound = ref(false);
 const isLoading = ref(false);
+
 async function handleSubmit() {
   try {
     isLoading.value = true;
     notFound.value = false;
 
-    const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery.value}&apikey=647f01ec`);
-    moviesByQuery.value = await response.json();
+    moviesByQuery.value = await store.getMoviesBySearch(searchQuery.value);
 
     if (moviesByQuery.value.Error){
       notFound.value = true;
@@ -52,7 +55,7 @@ async function handleSubmit() {
       <hr>
 
       <div v-if="moviesByQuery" class="grid-cards-layout">
-        <app-movie :moviesByQuery="moviesByQuery"/>
+        <app-movie :movies="moviesByQuery.Search"/>
       </div>
 
       <div v-else>

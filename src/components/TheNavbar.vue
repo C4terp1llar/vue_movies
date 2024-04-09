@@ -1,7 +1,7 @@
 <template>
   <nav class="p-s-m">
     <div class="nav-wrapper">
-      <router-link to="/" class="brand-logo">vue_movies</router-link>
+      <router-link to="/" class="brand-logo"><i class="material-icons">movie</i></router-link>
       <i data-target="mobile-demo" class="material-icons sidenav-trigger">menu</i>
       <ul class="right hide-on-med-and-down">
         <li>
